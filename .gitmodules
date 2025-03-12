@@ -1,6 +1,8 @@
 [submodule "configs/.oh-my-bash"]
 	path = configs/.oh-my-bash
 	url = https://github.com/ohmybash/oh-my-bash.git
+	branch = master
 [submodule "configs/.oh-my-zsh"]
 	path = configs/.oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
