@@ -1,0 +1,116 @@
+{
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "top",
+    "height": 10,
+    "spacing": 5,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/window",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "custom/music"
+    ],
+    "modules-right": [
+        "privacy",
+        "custom/camera",
+        "tray",
+        "cpu",
+        "memory",
+        "sway/language",
+        "pulseaudio",
+        "custom/clock",
+    ],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/workspaces": {
+        "all-outputs": true
+    },
+    "sway/window": {
+        "format": "{title}"
+    },
+    "sway/language": {  
+         "format": "{} |"
+    },
+    "custom/clock": {
+        "exec": "echo '| '$(date +'%H:%M | %d/%m/%y')' '",
+        "interval": 15
+    },
+    "custom/music": {
+        "exec": "echo $(playerctl metadata title) - $(playerctl metadata artist)",
+        "interval": 15
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": " {used}GiB",
+        "tooltip": true
+    },
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": " {status}",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click:": "blueman-manager"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}",
+        "rotate": 0,
+        "format-muted": "婢",
+        "on-click": "pavucontrol -t 3",
+        "on-click-right": "volumecontrol.sh -s ''",
+        "on-click-middle": "volumecontrol.sh -o m",
+        "on-scroll-up": "volumecontrol.sh -o i",
+        "on-scroll-down": "volumecontrol.sh -o d",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    "privacy": {
+        "icon-size": 12,
+        "icon-spacing": 5,
+        "transition-duration": 250,
+        "modules": [
+             {
+                  "type": "screenshare",
+                  "tooltip": true,
+                  "tooltip-icon-size": 24
+              },
+              {
+                  "type": "audio-in",
+                  "tooltip": true,
+                  "tooltip-icon-size": 24
+              }
+        ]
+    },
+    "custom/camera": {
+        "exec": "$HOME/scripts/webcam_privacy.sh",
+        "interval": 2,
+        "return-type": "json"
+    },
+    "custom/notification": {
+        "exec": "cat '/tmp/notifications'",
+        "interval": 1,
+	          "return-type": "json",
+	          "max-length": 50
+    },
+}

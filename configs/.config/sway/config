@@ -1,0 +1,28 @@
+# Hey there!
+# Every single thing is seperated and stored at config.d
+# there's nothing, that sets up here, except sourcing
+#  
+
+
+## I'm thinking about adding these
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    #bindsym $mod+b splith
+    #bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    #bindsym $mod+s layout stacking
+    #bindsym $mod+w layout tabbed
+    #bindsym $mod+e layout toggle split
+
+    # Move focus to the parent container
+    #bindsym $mod+a focus parent
+
+
+# Include stuff!
+include $HOME/.config/sway/config.d/*
+include /etc/sway/config.d/*

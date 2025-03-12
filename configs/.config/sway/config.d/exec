@@ -1,0 +1,27 @@
+# autostart comfy apps
+
+# bar!
+bar {
+    swaybar_command waybar
+}
+
+exec autotiling
+exec blueman-applet
+exec kdeconnect-indicator
+exec kdeconntectd
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+exec swayosd-server
+exec nm-applet
+exec swww-daemon
+
+exec firefox
+
+# auth (for root access for example)
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# sleeping
+exec swayidle -w \
+	timeout 300 'swaylock -f' \
+	timeout 600 'swaymsg "output * power off"' \
+		resume 'swaymsg "output * power on"'
