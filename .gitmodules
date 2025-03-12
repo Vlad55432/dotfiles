@@ -1,0 +1,3 @@
+[submodule "configs/.oh-my-bash"]
+	path = configs/.oh-my-bash
+	url = https://github.com/ohmybash/oh-my-bash.git
