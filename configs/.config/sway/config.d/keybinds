@@ -37,6 +37,13 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -5 --max-volume 100
 bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5 --max-volume 100
 bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+
+# Brightness raise
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+# Brightness lower
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
+
 # that one changes output device
 bindsym XF86Tools exec $HOME/scripts/toggle_audio.sh
 bindsym XF86Calculator exec kcalc
@@ -134,18 +141,13 @@ bindsym $mod+r mode "resize"
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-# monitor backlight (it's quite slow to change brightness, but it works!)
-# sadly, no brigtnessctl support
-bindsym $mod+Alt+Up exec ddcutil setvcp 10 + 10 
-bindsym $mod+Alt+Down exec ddcutil setvcp 10 - 10
-
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+w floating toggle
 
-# Swap focus between the tiling area and the floating area
+# Swap focuCs between the tiling area and the floating area
 bindsym $mod+Shift+w focus mode_toggle
 
 # pinning
@@ -155,10 +157,14 @@ bindsym $mod+g sticky toggle
 bindsym $mod+p exec hyprpicker -a | tee >(notify-send -t 2000 "Колір:" "$(cat)")
 
 # coding (if I can call it "coding" LOL)
-bindsym $mod+c exec kwrite
+bindsym $mod+c exec gedit
 
 # copybuffer (I need another one, that one's trash)
 bindsym $mod+v exec nwg-clipman
 
 #emoji (why th it takes so long to launch??)
 bindsym $mod+B exec emote
+
+# touchpad
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next

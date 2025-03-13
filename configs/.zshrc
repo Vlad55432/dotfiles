@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git; zsh-autosuggestions; zsh-history-substring-search; zsh-syntax-highlighting)
+plugins=(git; zsh-syntax-highlighting; zsh-autosuggestions; zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,8 +100,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias sober="flatpak run org.vinegarhq.Sober"
-
-if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
-    exec sway --unsupported-gpu
-fi
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"

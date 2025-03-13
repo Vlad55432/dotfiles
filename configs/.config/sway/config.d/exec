@@ -14,8 +14,9 @@ exec wl-paste --type image --watch cliphist store
 exec swayosd-server
 exec nm-applet
 exec swww-daemon
-
+exec udiskie --no-automount --smart-tray
 exec firefox
+exec batsignal -e -b -c 0 -m 0 -d 5
 
 # auth (for root access for example)
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

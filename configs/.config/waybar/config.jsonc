@@ -1,5 +1,5 @@
 {
-    "output": "HDMI-A-1",
+    "output": "eDP-1",
     "layer": "top",
     "position": "top",
     "height": 10,
@@ -16,6 +16,7 @@
         "privacy",
         "custom/camera",
         "tray",
+	"battery",
         "cpu",
         "memory",
         "sway/language",
@@ -82,7 +83,7 @@
         },
     },
     "tray": {
-        "icon-size": 15,
+        "icon-size": 20,
         "spacing": 10
     },
     "privacy": {
@@ -112,5 +113,16 @@
         "interval": 1,
 	          "return-type": "json",
 	          "max-length": 50
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+    	"states": {
+		"warning": 30,
+		"critical": 15
+    	},
+    	"format": "{capacity}% {icon}",
+    	"format-icons": ["", "", "", "", ""],
+    	"max-length": 25
     },
 }

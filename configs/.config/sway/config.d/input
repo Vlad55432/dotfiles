@@ -8,8 +8,9 @@ input type:keyboard {
     xkb_options "grp:alt_shift_toggle"
     xkb_numlock enabled
 }
-input type:pointer {
-    accel_profile flat
-    ## grrr I hate acceleration
-    pointer_accel 0.7
+input 1267:12652:ELAN0735:00_04F3:316C_Touchpad {
+	dwtp enabled
+	dwt enabled
+	tap enabled
+	middle_emulation enabled
 }

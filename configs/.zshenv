@@ -1,7 +1,3 @@
-## nvidia gpu needs these
-export WLR_RENDERER=vulkan
-export WLR_NO_HARDWARE_CURSORS=1
-
 ## those are just for looks in sway
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
