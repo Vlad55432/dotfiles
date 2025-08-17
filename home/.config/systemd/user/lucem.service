@@ -1,0 +1,10 @@
+[Unit]
+Description=Lucem 2.1.1
+After=network.target
+
+[Service]
+ExecStart=/home/vladyk144/.nimble/pkgs2/lucem-2.1.1-9d87a87c3f9953c522f960f32c10a9357a3d3515/lucemd
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

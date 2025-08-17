@@ -6,3 +6,6 @@
 	path = configs/.oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	branch = master
+[submodule "home/.config/spicetify/Themes/gruvbox"]
+	path = home/.config/spicetify/Themes/gruvbox
+	url = https://github.com/edjonesdev/spicetify-default-gruvbox

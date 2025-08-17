@@ -1,0 +1,103 @@
+@define-color base      #282828;
+@define-color text      #ebdbb2;
+@define-color select    #928374;
+@define-color urgent    #d79921;
+@define-color red       #fb4934;
+@define-color green     #b8bb26;
+@define-color blue      #83a598;
+
+* {
+    font-family: JetBrains Mono Nerd Font;
+    font-size: 12px;
+    min-height: 0;
+}
+window#waybar {
+    background-color: @base;
+    color: @text;
+    transition-property: background-color;
+    transition-duration: .5s;
+    padding: 5px;
+    margin: 5px;
+}
+
+#window {
+    margin-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    transition: none;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+#hyprland-language {
+	margin: 0 6px;
+}
+#workspaces button {
+    padding: 0 0px;
+    background-color: @base;
+    color: @text;
+}
+
+#workspaces button:hover {
+    background: @select;
+}
+
+#workspaces button.focused {
+    background-color: @select;
+    color: @text;
+}
+
+#workspaces button.active {
+    background-color: @select;
+
+}
+
+#workspaces button.urgent {
+    background-color: @urgent;
+}
+
+#cpu,
+#memory {
+    margin: 5px 6px 5px 6px;
+    color: @text;
+   
+}
+#pulseaudio {
+	margin-right: 0px;
+	margin-left: 6px;
+}
+#clock.date {
+	color: @text;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+#clock.time {
+	color: @text;
+	margin: 5px 0px 5px 0px;
+}
+#window,
+#workspaces {
+    margin: 0px 0px;
+    color: @text;
+}
+#tray {
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 5px;
+}
+#custom-cava {
+	color: #ebdbb2;
+}
+#custom-notification {
+	margin-right: 10px;
+}

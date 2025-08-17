@@ -1,0 +1,13 @@
+[Unit]
+Description=JMusicBot
+
+[Service]
+WorkingDirectory=/home/vladyk144/apps_ssd/jmusic
+Group=vladyk144
+Type=simple
+ExecStart=/usr/bin/env java -Dnogui=true -jar JMusicBot-0.4.3.8.jar
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

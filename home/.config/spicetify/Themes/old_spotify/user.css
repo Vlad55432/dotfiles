@@ -1,0 +1,352 @@
+/*** VARIABLES ***/
+:root {
+  --playButton-width: 88px;
+  --new-Rowheight: 41px;
+  --scrollbar-vertical-size:9px !important;
+}
+
+
+
+/*** PLAYLIST CONTENT ***/
+
+/*hide cover image in playlists*/
+.main-trackList-rowImage {
+  display: none;
+}
+
+/*display artist after title instead of below*/
+.main-trackList-rowMainContent {
+  grid-template: "title badges subtitle" /auto 18px 35%
+}
+
+.main-trackList-rowSubTitle {
+  grid-column-start: 3;
+}
+
+/*more space for title/artist and less for time added and length*/
+.main-trackList-trackList.main-trackList-indexable[aria-colcount="4"] .main-trackList-trackListRowGrid {
+  grid-template-columns: [index] 16px [first] 12fr [var1] 3fr [last] minmax(80px, 0.5fr);
+}
+
+
+.main-trackList-trackList.main-trackList-indexable[aria-colcount="5"] .main-trackList-trackListRowGrid {
+  grid-template-columns: [index] 16px [first] 12fr [var1] 4fr [var2] minmax(100px, 0.5fr) [last] minmax(80px, 0.5fr);
+}
+
+.main-trackList-trackList.main-trackList-indexable[aria-colcount="6"] .main-trackList-trackListRowGrid {
+
+  grid-template-columns: [index] 16px [first] 12fr [var1] 4fr [var2] minmax(120px, 0.5fr) [var3] minmax(160px, 0.5fr) [last] minmax(80px, 0.5fr);
+}
+
+/*reduce row height, add divider lines*/
+.main-trackList-trackListRow,
+.main-trackList-trackListRowGrid {
+  height: var(--new-Rowheight);
+  border-bottom-color: #272727;
+}
+
+/*make first row appear the same height*/
+.main-trackList-trackListHeader {
+  height: var(--new-Rowheight);
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+
+/*expand title/artist to uniform length in grid slot for all rows*/
+.main-trackList-rowSectionStart {
+  display: grid;
+  width: 85%;
+}
+
+/*same color/font size for title/artist/album*/
+.main-trackList-rowSectionVariable a,
+.main-trackList-rowSubTitle a {
+  color: var(--spice-text) !important;
+}
+
+.main-trackList-rowTitle {
+  font-size: 14px;
+}
+
+/*color artist/album green on current track*/
+.main-trackList-trackListRow.main-trackList-active .main-trackList-rowMarker,
+.main-trackList-trackListRow.main-trackList-active .main-trackList-rowTitle,
+.main-trackList-trackListRow.main-trackList-active .main-trackList-rowSubTitle a,
+.main-trackList-trackListRow.main-trackList-active .TypeElement-mesto-type a {
+  color: var(--text-bright-accent) !important;
+}
+
+/*left aligned heart*/
+.main-trackList-rowSectionStart {
+  margin-left: 32px !important;
+}
+
+.main-addButton-button.main-trackList-rowHeartButton,
+.main-trackList-rowHeartButton {
+  position: absolute !important;
+  left: 48px !important;
+  color: var(--spice-subtext) !important;
+}
+
+/*grey heart*/
+.main-addButton-active {
+  color: var(--spice-subtext) !important;
+}
+
+/*heart always visible*/
+.main-trackList-rowHeartButton[aria-checked=false] {
+  opacity: unset;
+}
+
+/*adjust position of drag&drop indicators for new row height*/
+.main-trackList-trackListRow.main-trackList-dropTargetAfter:after {
+  top: calc(var(--new-Rowheight) - 2px);
+}
+
+.main-trackList-trackListRow.main-trackList-dropTargetBefore:before {
+  top: -2px;
+}
+
+/*replace color of selected row*/
+.main-trackList-trackListRow.main-trackList-selected,
+.main-trackList-trackListRow.main-trackList-selected:hover {
+  background-color: rgba(var(--spice-rgb-new-selected-row), .3);
+}
+
+
+
+/*** PLAYLIST COLUMN HEADERS ***/
+
+/*Move "Title" from center to left*/
+.main-trackList-column {
+  justify-content: left;
+}
+
+/*use old font design for playlist type/column headers*/
+.main-trackList-trackListHeader span {
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px;
+  font-size: .6815rem;
+}
+
+.main-entityHeader-headerText .TypeElement-mestoBold-type:first-child {
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px;
+  font-size: .6815rem;
+  font-weight: lighter;
+}
+
+/*adjust header position*/
+.main-trackList-trackListHeader .main-trackList-rowSectionIndex,
+.main-trackList-trackListHeader .main-trackList-playsHeader,
+.main-trackList-column {
+  position: relative;
+  top: 6px;
+}
+
+
+
+/*** PLAYLIST TITLE ***/
+
+/*smaller play button in top bar*/
+.ButtonInner-md-iconOnly,
+.ButtonInner-medium-iconOnly
+{
+  min-block-size: 32px;
+  inline-size: 32px;
+  block-size: 32px;
+}
+
+.ButtonInner-md-iconOnly span,
+.ButtonInner-medium-iconOnly span{
+  position: unset !important;
+}
+
+/*adjust size/shape of play button*/
+.main-actionBar-ActionBar .ButtonInner-lg-iconOnly,
+.main-actionBar-ActionBar .ButtonInner-large-iconOnly
+{
+  min-block-size: 32px;
+  inline-size: var(--playButton-width);
+  block-size: 32px;
+}
+
+.main-actionBar-ActionBar .ButtonInner-lg-iconOnly span,
+.main-actionBar-ActionBar .ButtonInner-large-iconOnly span
+{
+  position: unset !important;
+}
+
+.main-playButton-PlayButton svg {
+  height: 16px;
+}
+
+/*smaller playlist title*/
+.main-entityHeader-title h1 {
+  font-size: 2.975rem !important;
+  font-weight: 100;
+}
+
+/*smaller playlist image*/
+.playlist-playlist-playlistImageContainer {
+  height: 210px;
+  min-width: 210px;
+  width: 210px;
+}
+
+.main-entityHeader-container.main-entityHeader-nonWrapped {
+  min-height: 210px;
+}
+
+/*increased visibility of text in playlist description*/
+.playlist-playlist-playlistDescription,
+.main-entityHeader-metaDataText span {
+  color: var(--text-subdued);
+}
+
+/*adjust margin of play button*/
+.main-actionBar-ActionBar .main-playButton-PlayButton {
+  margin-right: calc(32px + var(--playButton-width) - 56px) !important;
+
+}
+
+
+/*reduce height of action bar*/
+.os-content-glue {
+  height: auto;
+}
+
+.main-actionBar-ActionBar {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+
+
+/*** GRADIENTS ***/
+
+/*remove playlist color gradient*/
+.main-entityHeader-backgroundColor {
+  background-color: inherit !important;
+  background-image: unset !important;
+}
+
+.main-actionBarBackground-background {
+  background-color: inherit !important;
+  background-image: unset !important;
+}
+
+/*remove top bar color gradient*/
+.main-topBar-background {
+  background-color: var(--spice-main) !important;
+}
+
+/*remove sidebar divider gradient*/
+.main-rootlist-rootlistDividerGradient {
+  background-image: unset !important;
+}
+
+
+
+/*** ARTIST PAGE ***/
+
+/*show album covers in popular song list on artist pages*/
+.artist-artistOverview-artistOverviewContainer .main-trackList-rowImage {
+  display:grid;
+}
+
+.artist-artistOverview-artistOverviewContainer .main-trackList-rowSectionStart {
+  grid-template-columns: 50px auto;
+}
+
+/*adjust spacing of columns*/
+.artist-artistOverview-artistOverviewContainer .main-trackList-trackList.main-trackList-indexable[aria-colcount="4"] .main-trackList-trackListRowGrid {
+  grid-template-columns: [index] 16px [first] 60% [var1] auto [last] 80px;
+}
+
+.artist-artistOverview-artistOverviewContainer .main-trackList-rowMainContent {
+    grid-template: "title badges " /auto 18px;
+}
+
+/*width of title+badge*/
+.artist-artistOverview-artistOverviewContainer .main-trackList-rowSectionStart {
+  display: grid;
+  width: 60%;
+}
+
+/*heart visible*/
+.artist-artistOverview-artistOverviewContainer .main-trackList-rowHeartButton[aria-checked=false] {
+  opacity: unset;
+}
+
+/*extra space between play button and top banner*/
+.artist-artistOverview-overview .os-content-glue {
+  margin: 10px !important;
+}
+
+
+
+
+/*** MISC ***/
+
+/*black notification text*/
+.main-notificationBubble-NotificationBubble {
+  color: #000000;
+  text-transform: uppercase;
+}
+
+/*darker background for Now Playing/Friend Activity sidebars*/
+.main-nowPlayingView-container,
+.main-buddyFeed-container {
+  background: var(--spice-sidebar);
+}
+
+/*move 'create playlist' button to bottom*/
+.GlueDropTarget--albums {
+  order:1;
+}
+
+/*adjust highlight color for selected items in sidebar*/
+.encore-dark-theme, .encore-dark-theme .encore-base-set {
+    --background-tinted-base: rgba(var(--spice-rgb-selected-row),.12);
+    --background-tinted-highlight: rgba(var(--spice-rgb-selected-row),.00);
+    --background-tinted-press: rgba(var(--spice-rgb-selected-row),.04);
+}
+
+/*
+/*show cover image in playlists
+.main-trackList-trackList .main-trackList-rowImage {
+  display:grid;
+}
+
+.main-trackList-trackList .main-trackList-rowSectionStart:has(> .main-trackList-rowImage, .main-trackList-rowImageWithPlay) {
+  grid-template-columns:  50px auto;
+}
+
+/*fix heart in history
+.main-trackList-trackList[aria-colcount="3"] .main-trackList-rowSectionStart
+{
+  margin-left: calc(32px + 36px) !important;
+}
+
+.main-trackList-trackList[aria-colcount="3"]:not(.main-trackList-indexable) .main-trackList-trackListRowGrid {
+    grid-template-columns: [first] 12fr [var1] 3fr [last] minmax(80px, 0.5fr);
+}
+
+/* sidebar width
+.Root__top-container {
+    grid-template-areas: "left-sidebar    main-view         right-sidebar" "now-playing-bar now-playing-bar now-playing-bar";
+    grid-template-columns: 2fr 10fr;
+}
+
+.Root__top-container:has(.main-yourLibraryX-libraryIsCollapsed) 
+{
+    grid-template-columns: auto 10fr;
+}
+
+.Root__nav-bar:not(:has(.main-yourLibraryX-libraryIsCollapsed))
+{
+    width: auto;
+    min-width: 280px;
+}
+
